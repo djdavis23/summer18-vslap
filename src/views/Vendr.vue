@@ -22,7 +22,7 @@
 
     <!-- SHOW IMAGE OF PURCHASED PRODUCT -->
     <div id="product">
-      <img src="../assets/nogo.png" alt="image of purchased product" height="100">
+      <img :src="selectedProduct" alt="image of purchased product" height="100" v-if="selectedProduct">
     </div>
 
   </div>
@@ -44,10 +44,15 @@
         return foodItem.quantity <= 0
       }
 
+
     },
     computed: {
       machine() {
         return this.$store.state.machine;
+      },
+      selectedProduct() {
+        return this.$store.state.machine.selectedProduct
+
       }
 
     }

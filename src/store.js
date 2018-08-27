@@ -27,19 +27,19 @@ export default new Vuex.Store({
       },
       foodItems: [{
         id: 'a1',
-        img: ('./assets/coke.jpg'),
+        img: '../assets/coke.jpg',
         price: 0.75,
         quantity: 10
       },
       {
         id: 'a2',
-        img: './assets/creamsoda.jpg',
+        img: '../assets/creamsoda.jpg',
         price: 0.60,
         quantity: 100
       },
       {
         id: 'a3',
-        img: './assets/drpepper.jpg',
+        img: '../assets/drpepper.jpg',
         price: 0.90,
         quantity: 2
       }],
@@ -57,6 +57,9 @@ export default new Vuex.Store({
     },
     vendProduct(state, product) {
       state.machine.selectedProduct = product
+      let delay = setTimeout(function () {
+        state.machine.selectedProduct = ''
+      }, 1000)
     }
   },
   actions: {
