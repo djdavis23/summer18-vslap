@@ -1,31 +1,12 @@
 export default class VendingMachine {
-  constructor() {
-    this.transactionTotal = 0;
-    this.acceptableCurrency = {
-      quarter: 0.25,
-      dime: 0.10,
-      nickel: 0.05
-    }
-    this.foodItems = [{
-      id: 'a1',
-      img: '../assets/coke.jpg',
-      price: 0.75,
-      quantity: 10
-    },
-    {
-      id: 'a2',
-      img: '../assets/creamsoda.jpg',
-      price: 0.60,
-      quantity: 100
-    },
-    {
-      id: 'a3',
-      img: '../assets/drpepper.jpg',
-      price: 0.90,
-      quantity: 2
-    }]
-    this.machineTotal = 10;
+  constructor(data) {
+    this.transactionTotal = data.transactionTotal
+    this.acceptableCurrency = data.acceptableCurrency
+    this.foodItems = data.foodItems
+    this.machineTotal = data.machineTotal
+    this.selectedProduct = data.selectedProduct
   }
+
   addMoney(coin) {
     if (this.acceptableCurrency[coin]) {
       this.transactionTotal += this.acceptableCurrency[coin]
